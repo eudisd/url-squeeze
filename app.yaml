@@ -2,15 +2,8 @@ application: url-squeeze
 version: 1
 runtime: python
 api_version: 1
+handlers:
 
-- img: /img
-    static_dir: img
-
-- js: /js
-    static_dir: js
-
-- css: /css
-    static_dir: css
 
 - url: .*
     script: main.py

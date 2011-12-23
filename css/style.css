@@ -1,0 +1,21 @@
+/* Stylesheet: url-shortner */
+
+/* Tag selectors */
+html, body {
+    width: 100%;
+}
+
+/* IDs */
+
+/* Main Page */
+#container {
+    width: 70%;
+    border: 1px solid red;
+}
+
+#body {
+
+}
+
+/* Classes */
+/* Main Page */

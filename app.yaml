@@ -4,6 +4,14 @@ runtime: python
 api_version: 1
 handlers:
 
+- url: /img
+  static_dir: img
 
+- url: /js
+  static_dir: js
+
+- url: /css
+  static_dir: css
+  
 - url: .*
-    script: main.py
+  script: main.py

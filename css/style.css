@@ -49,6 +49,9 @@ a {
     
     -moz-border-radius-topright: 5px;
     -moz-border-radius-bottomleft: 5px;
+    
+    color: gray;
+    font-style: italic;
 }
 
 #button_input {

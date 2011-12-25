@@ -41,6 +41,16 @@ a {
     font-family: Ubuntu;
 }
 
+#url_input {
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    -webkit-top-right-radius: 5px;
+    -webkit-bottom-left-radius: 5px;
+    
+    -moz-border-radius-topright: 5px;
+    -moz-border-radius-bottomleft: 5px;
+}
+
 #button_input {
     width: 160px;
     height: 23px;

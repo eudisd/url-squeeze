@@ -12,6 +12,9 @@ handlers:
 
 - url: /css
   static_dir: css
+
+- url: /facebox
+  static_dir: facebox
   
 - url: .*
   script: main.py

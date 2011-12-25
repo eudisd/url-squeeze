@@ -3,11 +3,24 @@
 /* Font Imports (Google CDN) */
 @import url(http://fonts.googleapis.com/css?family=Ubuntu);
 
-
 /* Tag selectors */
 html, body {
     width: 100%;
     margin: auto;
+    font-family: arial;
+}
+
+footer {
+    font-size: 11px;
+    color: rgb(100,100,100);
+    width: 100%;
+    float: left;
+    text-align: center;
+    margin: auto;
+}
+
+a {
+    text-decoration: none;
 }
 
 /* IDs */
@@ -26,6 +39,12 @@ html, body {
     font-weight: bold;
     position: relative;
     font-family: Ubuntu;
+}
+
+#sub_header {
+    font-size: 11px;
+    color: gray;
+    font-style: italic;
 }
 
 /* For the gradient effect on the title */
@@ -48,14 +67,15 @@ html, body {
 }
 
 #left_panel {
-    width: 49%;
-    border: 1px solid blue;
+    width: 44%;
+    padding: 2%;
     float: left;
 }
 
 #right_panel {
-    width: 49%;
-    border: 1px solid red;
+    width: 44%;
+    padding: 2%;
+    border-left: 2px solid rgb(230,230,230);
     float: left;
 }
 
@@ -63,6 +83,15 @@ html, body {
     width: 98%;
     text-align: center;
     float: left;
+}
+
+#panel {
+    border: 1px solid rgb(200,200,255);
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    text-align: center;
+    
 }
 
 /* Classes */

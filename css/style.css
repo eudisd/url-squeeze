@@ -1,5 +1,9 @@
 /* Stylesheet: url-shortner */
 
+/* Font Imports (Google CDN) */
+@import url(http://fonts.googleapis.com/css?family=Ubuntu);
+
+
 /* Tag selectors */
 html, body {
     width: 100%;
@@ -12,12 +16,53 @@ html, body {
 #container {
     width: 70%;
     margin: auto;
+}
+
+#head {
+    width: 100%;
     float: left;
-    border: 1px solid red;
+    font-size: 46px;
+    color: rgb(100,100,255);
+    font-weight: bold;
+    position: relative;
+    font-family: Ubuntu;
+}
+
+/* For the gradient effect on the title */
+#head span {
+    position: absolute;
+    background: url("/img/gradient.png") repeat-x;
+    float: left;
+    width: 100%;
+    height: 44px;
 }
 
 #body {
+    width: 100%;
+    float: left;
+}
 
+#content {
+    float: left;
+    width: 100%;
+}
+
+#left_panel {
+    width: 49%;
+    border: 1px solid blue;
+    float: left;
+}
+
+#right_panel {
+    width: 49%;
+    border: 1px solid red;
+    float: left;
+}
+
+#bottom {
+    width: 98%;
+    text-align: center;
+    float: left;
 }
 
 /* Classes */

@@ -10,3 +10,9 @@ class MainPage(webapp.RequestHandler):
         self.response.headers['Content-Type'] = 'text/html'
         path = os.path.join(os.path.dirname(__file__), '../templates/index.html')
         self.response.out.write(template.render(path, {}))
+        
+class StatsPage(webapp.RequestHandler):
+    def get(self):
+        self.response.headers['Content-Type'] = 'text/html'
+        path = os.path.join(os.path.dirname(__file__), '../templates/stats.html')
+        self.response.out.write(template.render(path, {}))

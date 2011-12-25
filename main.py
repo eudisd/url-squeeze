@@ -7,7 +7,7 @@ import lib.setup_pages
 def main():
     application = webapp.WSGIApplication(
     [
-    ('/', lib.setup_pages.MainPage)
+    ('/', lib.setup_pages.MainPage),
     ('/stats', lib.setup_pages.StatsPage)
     ], debug=True)
     

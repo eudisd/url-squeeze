@@ -9,7 +9,8 @@ def main():
     [
     ('/', lib.setup_pages.MainPage),
     ('/stats', lib.setup_pages.StatsPage),
-    ('/desc', lib.setup_pages.FaceboxPage)
+    ('/desc', lib.setup_pages.FaceboxPage),
+    ('/shorten', lib.setup_pages.ShortenPage)
     ], debug=True)
     
     run_wsgi_app(application)

@@ -16,3 +16,9 @@ class StatsPage(webapp.RequestHandler):
         self.response.headers['Content-Type'] = 'text/html'
         path = os.path.join(os.path.dirname(__file__), '../templates/stats.html')
         self.response.out.write(template.render(path, {}))
+ 
+class FaceboxPage(webapp.RequestHandler):
+    def get(self):
+        self.response.headers['Content-Type'] = 'text/html'
+        path = os.path.join(os.path.dirname(__file__), '../templates/desc.html')
+        self.response.out.write(template.render(path, {}))

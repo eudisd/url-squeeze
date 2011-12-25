@@ -8,7 +8,8 @@ def main():
     application = webapp.WSGIApplication(
     [
     ('/', lib.setup_pages.MainPage),
-    ('/stats', lib.setup_pages.StatsPage)
+    ('/stats', lib.setup_pages.StatsPage),
+    ('/desc', lib.setup_pages.FaceboxPage)
     ], debug=True)
     
     run_wsgi_app(application)

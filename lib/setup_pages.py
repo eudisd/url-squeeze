@@ -7,7 +7,10 @@ from google.appengine.ext.webapp.util import run_wsgi_app
 from google.appengine.ext.webapp import template
 from google.appengine.ext import db
 
-# First, define the necessary models
+# A single global
+short_handler = "http://eudisd.appspot.com/handler?id="
+
+# First, define the necessary model
 class UrlStorage(db.Model):
     long_url = db.StringProperty()
     short_url = db.StringProperty()
@@ -33,10 +36,20 @@ class FaceboxPage(webapp.RequestHandler):
         path = os.path.join(os.path.dirname(__file__), '../templates/desc.html')
         self.response.out.write(template.render(path, {}))
         
+class HandlerPage(webapp.RequestHandler):
+    """ This redirects the short url given, to the one associated in the db """
+    def get(self):
+        self.response.headers['Content-Type'] = 'text/html'
+        id = self.request.get('id')
+        
+        q = UrlStorage().all()
+        url = ''
+        
+        self.redirect(url)
+        
 class ShortenPage(webapp.RequestHandler):
     def get(self):
-    
-        short_handler = "http://eudisd.appspot.com/handler?id="
+        global short_handler
         
         self.response.headers['Content-Type'] = 'text/plain'
         

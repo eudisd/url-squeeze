@@ -154,7 +154,7 @@ a {
 #right_panel {
     width: 44%;
     padding: 2%;
-    border-left: 2px solid rgb(230,230,230);
+    /*border-left: 2px solid rgb(230,230,230);*/
     float: left;
 }
 

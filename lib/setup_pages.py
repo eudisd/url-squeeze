@@ -46,6 +46,11 @@ class ShortenPage(webapp.RequestHandler):
         e.date = datetime.datetime.now().date()
         e.put()
         
-        short = short_handler + '1'
+        short = short_handler + str(e.key().id())
+        
+        # Update the last entry short_url field
+        
+        e.short_url = short
+        e.put()
         
         self.response.out.write(short)

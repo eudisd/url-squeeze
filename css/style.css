@@ -158,6 +158,15 @@ a {
     float: left;
 }
 
+#short_url {
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    -webkit-top-right-radius: 5px;
+    -webkit-bottom-left-radius: 5px;
+    -moz-border-radius-topright: 5px;
+    -moz-border-radisu-bottomleft: 5px;
+}
+
 #bottom {
     width: 98%;
     text-align: center;

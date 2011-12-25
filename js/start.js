@@ -1,6 +1,6 @@
 $(document).ready(function(){
     $("#tech").facebox();
-    
+    $("#right_panel").hide();
     $("#url_input").live('click', function(){
         $("#url_input").val('');
     });
@@ -16,14 +16,18 @@ $(document).ready(function(){
     
     $("#button_input").live('click', function(){
         var url = $("#url_input").val();
-        $.ajax({
-            url: '/shorten',
-            data : 'url=' + escape(url),
-            contentType: 'text/plain',
-            success: function(data){
-                alert(data);
-            }
-        });
-        
+        if(url == "Long URL goes here!"){
+            $.facebox("<div style='color: red; width:480px; text-align: center;'>Please input a url!</div>");
+        } else {
+            $.ajax({
+                url: '/shorten',
+                data : 'url=' + escape(url),
+                contentType: 'text/plain',
+                success: function(data){
+                    $("#short_url").val(data);
+                    $("#right_panel").show('fast');
+                }
+            });
+        }
     });
 });

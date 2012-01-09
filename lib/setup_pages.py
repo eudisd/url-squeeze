@@ -8,7 +8,7 @@ from google.appengine.ext.webapp import template
 from google.appengine.ext import db
 
 # A single global
-short_handler = "http://eudisd.appspot.com/handler?id="
+short_handler = "http://url-squeeze.appspot.com/handler?id="
 #short_handler = "http://localhost:8080/handler?id="
 
 # First, define the necessary model

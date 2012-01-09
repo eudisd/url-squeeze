@@ -11,7 +11,8 @@ def main():
     ('/stats', lib.setup_pages.StatsPage),
     ('/desc', lib.setup_pages.FaceboxPage),
     ('/shorten', lib.setup_pages.ShortenPage),
-    ('/handler', lib.setup_pages.HandlerPage)
+    ('/handler', lib.setup_pages.HandlerPage),
+    ('/.*', lib.setup_pages.ErrorPage)
     ], debug=True)
     
     run_wsgi_app(application)

@@ -24,8 +24,15 @@ $(document).ready(function(){
                 data : 'url=' + escape(url),
                 contentType: 'text/plain',
                 success: function(data){
-                    $("#short_url").val(data);
-                    $("#right_panel").show('fast');
+                    if($("#short_url").is(":hidden")){
+                        $("#short_url").val(data);
+                        $("#right_panel").show('fast');
+                    } else {
+                        $("#right_panel").hide('fast', function(){
+                            $("#short_url").val(data);
+                            $("#right_panel").show('fast');
+                        });
+                    }
                 }
             });
         }

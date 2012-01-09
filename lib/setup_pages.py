@@ -8,7 +8,8 @@ from google.appengine.ext.webapp import template
 from google.appengine.ext import db
 
 # A single global
-short_handler = "http://eudisd.appspot.com/handler?id="
+#short_handler = "http://eudisd.appspot.com/handler?id="
+short_handler = "http://localhost:8080/handler?id="
 
 # First, define the necessary model
 class UrlStorage(db.Model):
@@ -41,11 +42,22 @@ class HandlerPage(webapp.RequestHandler):
     def get(self):
         self.response.headers['Content-Type'] = 'text/html'
         id = self.request.get('id')
+        url404 = '/404'
+        url = '//' 
+        # If it is in the database redirect, else 
+        # send to error page
+        if id != '':
+            id = int(id)
+            url = url + UrlStorage.get_by_id(id).long_url
+           
+            if url:
+                self.redirect(url)
+            else:
+                self.redirect(url404)
+        else:
+            self.redirect(url404)
+    
         
-        q = UrlStorage().all()
-        url = ''
-        
-        self.redirect(url)
         
 class ShortenPage(webapp.RequestHandler):
     def get(self):
@@ -67,3 +79,9 @@ class ShortenPage(webapp.RequestHandler):
         e.put()
         
         self.response.out.write(short)
+        
+class ErrorPage(webapp.RequestHandler):
+    def get(self):
+       self.response.headers['Content-Type'] = 'text/html'
+       path = os.path.join(os.path.dirname(__file__), '../templates/404.html')
+       self.response.out.write(template.render(path, {}))
